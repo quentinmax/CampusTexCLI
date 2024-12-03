@@ -6,5 +6,4 @@ export type PromptData = {
   matriculationNumber: string;
   fileName: string;
   topic: string;
-  createFolder: boolean;
 };

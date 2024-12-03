@@ -36,61 +36,6 @@ export const articleTemplate = `
 % Möchtest du die Nummer einer Aufgabe auf eine beliebige Zahl x setzen, schreibe vor der Aufgabe: \\setcounter{exnum}{x}
 
 
-\\begin{table}[h]
-    \\exercise{Table}
-    \\centering
-    \\begin{tabular}{|c|c|c|}
-        \\hline
-        Name &  Color &  major growing areas  \\\\
-        \\hline
-        Banana&  yellow&  Panama   \\\\
-        Apple &  red & Deutschland\\\\
-        Orange &  orange& Indien\\\\
-        \\hline
-    \\end{tabular}
-    \\caption{Fruits and where they grow}
-    \\label{table:fruits}
-\\end{table}
-
-\\exercise{Meme}
-\\begin{figure}[t!]
-    \\centering
-    \\includegraphics[scale=0.4]{witzigesMeme}
-    \\caption{Peter Lustig hält eine Pistole in der Hand}
-    \\label{fig:meme}
-\\end{figure}
-
-\\exercise{TIKZ}
-\\begin{figure}[!h]
-	\\centering
-	\\begin{tikzpicture}[initial text={}]
-        \\node[state,initial] (A) {A};
-        \\node[state] (B) [above right=of A] {B};
-        \\node[state, accepting] (C) [below right=of B] {C};
-        \\path[->] (A) edge node[below left]{$b$} (C);
-        \\path[->] (A) edge node[above left]{$a$} (B);
-        \\path[->,loop right] (B) edge node{$b$} (B);
-        \\path[->] (B) edge node[right]{$a$} (C);
-	\\end{tikzpicture}
-	\\caption{NFA}
-    \\label{fig:automat}
-\\end{figure}
-
-
-\\exercise{Citation}
-\\cite{DBLP:conf/eurocrypt/Groth16}
-\\cite{DBLP:journals/ijcip/HeinrichGAK23}
-\\cite{s2011}
-
-
-\\exercise{References}
-\\begin{enumerate}
-    \\item \\ref{table:fruits}
-    \\item \\ref{fig:meme}
-    \\item \\ref{fig:automat}
-\\end{enumerate}
-
-
 \\bibliographystyle{plain}
 \\bibliography{literature}
 

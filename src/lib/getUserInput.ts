@@ -9,7 +9,6 @@ export const getUserInput = async () => {
     templateType: "article",
     topic: "",
     userName: "",
-    createFolder: true,
   };
 
   //Choices: Presentation, Article
@@ -25,19 +24,7 @@ export const getUserInput = async () => {
     },
   });
 
-  data.fileName = answer.file_name;
-
-  const folderPrompt = await inquirer.prompt({
-    name: "create_folder",
-    type: "checkbox",
-    message: "Create folder?",
-    default() {
-      return true;
-    },
-    choices: ["Yes", "No"],
-  });
-
-  data.createFolder = folderPrompt.create_folder;
+  data.fileName = answer.file_name;  
 
   //Name of topic
   const topicPrompt = await inquirer.prompt({

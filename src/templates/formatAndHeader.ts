@@ -34,7 +34,7 @@ export const formatAndHeader = ({
 % Formatierung der Kopfzeile
 % \\ohead: Setzt rechten Teil der Kopfzeile mit
 % Namen und Matrikelnummern aller Bearbeiter
-\\ohead{${userName} (${matriculationNumber})}
+\\ohead{${userName} ${matriculationNumber && ("(" + matriculationNumber + ")")}}
 % \\chead{} kann mittleren Kopfzeilen Teil sezten
 % \\ihead: Setzt linken Teil der Kopfzeile mit
 % Modulnamen, Semester und Übungsblattnummer

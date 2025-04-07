@@ -1,5 +1,4 @@
 import inquirer from "inquirer";
-import { TemplateType } from "../types/templateType.js";
 
 export const askTemplateType = async () => {
   const choicesPrompt = await inquirer.prompt({

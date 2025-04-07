@@ -5,8 +5,11 @@ import { articleTemplate } from "../templates/article.js";
 import { packages } from "../templates/packages.js";
 import { coloredLog } from "../util/coloredLog.js";
 import chalk from "chalk";
+import { literature } from "../templates/literature.js";
 
-const handleArticle = async (folderName: string, outputFile: string, fileName: string, matriculationNumber: string, topic: string, userName: string) => {
+type Props = { folderName: string; outputFile: string; fileName: string; matriculationNumber: string; topic: string; userName: string; }
+
+const handleArticle = async ({ folderName, outputFile, fileName, matriculationNumber = "", topic, userName }: Props) => {
   const header = formatAndHeader({
     fileName,
     matriculationNumber,
@@ -34,6 +37,13 @@ const handleArticle = async (folderName: string, outputFile: string, fileName: s
   })
 
   await fs.writeFile(`./${folderName}/${outputFile}`, articleTemplate, "utf-8");
+
+  coloredLog({
+    text: `Writing literature file to ./${folderName}/literature.bib`,
+    highlight: chalk.yellow("INFO:"),
+  })
+  
+  await fs.writeFile(`./${folderName}/literature.bib`, literature, "utf-8");
 
   console.log(chalk.green("Successfully created files."))
 
@@ -70,7 +80,7 @@ export const injectDataIntoLatex = async ({
 
   switch (templateType) {
     case "article":
-      await handleArticle(folderName, outputFile, fileName, matriculationNumber, topic, userName)
+      await handleArticle({ folderName, outputFile, fileName, matriculationNumber, topic, userName })
       break;
     case "presentation":
       () => {};

@@ -26,7 +26,7 @@ export const articleTemplate = `
 % Beachte:
 % \\setcounter{countername}{number}: Legt den Wert des Counters fest
 % \\stepcounter{countername}: Erhöht den Wert des Counters um 1.
-\\setcounter{sheetnr}{42} % Nummer des Übungsblattes
+\\setcounter{sheetnr}{1} % Nummer des Übungsblattes
 \\setcounter{exnum}{1} % Nummer der Aufgabe
 
 % Beginn des eigentlichen Dokuments

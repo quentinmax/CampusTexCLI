@@ -4,6 +4,8 @@ export const formatAndHeader = ({
   matriculationNumber,
   topic,
   userName,
+  useBibTex
+
 }: Omit<PromptData, "templateType">) => {
   return `
 % LaTeX Template für Abgaben an der Universität Stuttgart

@@ -7,14 +7,15 @@ import { coloredLog } from "../util/coloredLog.js";
 import chalk from "chalk";
 import { literature } from "../templates/literature.js";
 
-type Props = { folderName: string; outputFile: string; fileName: string; matriculationNumber: string; topic: string; userName: string; }
+type Props = { folderName: string; outputFile: string; fileName: string; matriculationNumber: string; topic: string; userName: string; useBibTex: boolean; }
 
-const handleArticle = async ({ folderName, outputFile, fileName, matriculationNumber = "", topic, userName }: Props) => {
+const handleArticle = async ({ folderName, outputFile, fileName, matriculationNumber = "", topic, userName, useBibTex}: Props) => {
   const header = formatAndHeader({
     fileName,
     matriculationNumber,
     topic,
     userName,
+    useBibTex
   });
 
   coloredLog({
@@ -36,14 +37,16 @@ const handleArticle = async ({ folderName, outputFile, fileName, matriculationNu
     highlight: chalk.yellow("INFO:"),
   })
 
-  await fs.writeFile(`./${folderName}/${outputFile}`, articleTemplate, "utf-8");
+  await fs.writeFile(`./${folderName}/${outputFile}`, articleTemplate(useBibTex), "utf-8");
 
-  coloredLog({
-    text: `Writing literature file to ./${folderName}/literature.bib`,
-    highlight: chalk.yellow("INFO:"),
-  })
   
-  await fs.writeFile(`./${folderName}/literature.bib`, literature, "utf-8");
+  if(useBibTex){
+    coloredLog({
+      text: `Writing literature file to ./${folderName}/literature.bib`,
+      highlight: chalk.yellow("INFO:"),
+    })
+    await fs.writeFile(`./${folderName}/literature.bib`, literature, "utf-8");
+  }
 
   console.log(chalk.green("Successfully created files."))
 
@@ -56,6 +59,7 @@ export const injectDataIntoLatex = async ({
   templateType,
   topic,
   userName,
+  useBibTex
 }: PromptData) => {
  
   const outputFile = fileName.includes(".tex") ? fileName : `${fileName}.tex`;
@@ -80,7 +84,7 @@ export const injectDataIntoLatex = async ({
 
   switch (templateType) {
     case "article":
-      await handleArticle({ folderName, outputFile, fileName, matriculationNumber, topic, userName })
+      await handleArticle({ folderName, outputFile, fileName, matriculationNumber, topic, userName, useBibTex })
       break;
     case "presentation":
       () => {};

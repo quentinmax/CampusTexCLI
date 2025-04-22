@@ -1,7 +1,7 @@
 import { PromptData } from "../types/promptData.js";
 import { TemplateType } from "../types/templateType.js";
 
-export const articleTemplate = `
+export const articleTemplate = (useBibTex: boolean) => `
 % LaTeX Template für Abgaben an der Universität Stuttgart
 % Autor: Sandro Speth
 % Bei Fragen: Sandro.Speth@iste.uni-stuttgart.de
@@ -35,11 +35,12 @@ export const articleTemplate = `
 % Möchtest du eine Aufgabe in der Nummerierung überspringen, schreibe vor der Aufgabe: \\stepcounter{exnum}
 % Möchtest du die Nummer einer Aufgabe auf eine beliebige Zahl x setzen, schreibe vor der Aufgabe: \\setcounter{exnum}{x}
 
-
+${useBibTex ? `
 \\bibliographystyle{plain}
 \\bibliography{literature}
-
+` : ``}
 
 % Ende des Dokuments
 \\end{document}
 `;
+

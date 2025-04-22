@@ -6,4 +6,5 @@ export type PromptData = {
   matriculationNumber: string;
   fileName: string;
   topic: string;
+  useBibTex: boolean;
 };

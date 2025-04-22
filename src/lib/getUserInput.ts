@@ -9,6 +9,7 @@ export const getUserInput = async () => {
     templateType: "article",
     topic: "",
     userName: "",
+    useBibTex: false,
   };
 
   //Choices: Presentation, Article
@@ -25,6 +26,18 @@ export const getUserInput = async () => {
   });
 
   data.fileName = answer.file_name;  
+
+  //Use bibtex
+  const useBibTexPrompt = await inquirer.prompt({
+    name: "bibtex",
+    type: "confirm",
+    message: "Will you use BibTex?",
+    default(){
+      return false;
+    }
+  })
+
+  data.useBibTex = useBibTexPrompt.bibtex;
 
   //Name of topic
   const topicPrompt = await inquirer.prompt({

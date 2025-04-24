@@ -3,8 +3,8 @@
   "bin": {
     "campus-tex-cli": "dist/index.js"
   },
-  "version": "1.1.0",
-  "description": "A CLI to quickly generate latex files for presentations or task assignments, using the unofficial template from the University of Stuttgart.",
+  "version": "1.1.1",
+  "description": "A CLI to quickly generate latex files for presentations or task assignments, using the unofficial template by the University of Stuttgart.",
   "main": "./dist/index.js",
   "type": "module",
   "scripts": {
@@ -16,12 +16,15 @@
     "latex",
     "tex",
     "university",
-    "presentation"
+    "presentation",
+    "cli",
+    "article",
+    "efficiency"
   ],
   "author": "quentinhoehne",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/quentinmax/CampusTexCLI.git"
+    "url": "https://github.com/quentinmax/CampusTexCLI.git"
   },
   "license": "MIT",
   "dependencies": {

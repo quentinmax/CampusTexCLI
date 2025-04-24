@@ -1,5 +1,5 @@
-import { PromptData } from "../types/promptData.js";
-import { TemplateType } from "../types/templateType.js";
+import { PromptData } from "../../types/promptData.js";
+import { TemplateType } from "../../types/templateType.js";
 
 export const articleTemplate = (useBibTex: boolean) => `
 % LaTeX Template für Abgaben an der Universität Stuttgart

@@ -13,7 +13,9 @@ export const handleProgram = async () => {
   });
   await sleep(100);
 
+  //Get user inputs
   const userInputs = await getUserInput();
 
+  //Inject user inputs into latex
   injectDataIntoLatex(userInputs);
 };

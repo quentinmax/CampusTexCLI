@@ -21,7 +21,7 @@ export const getUserInput = async () => {
     type: "input",
     message: "Enter file name: ",
     default() {
-      return "cli-generated.tex";
+      return "assignment.tex";
     },
   });
 

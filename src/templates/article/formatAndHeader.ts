@@ -1,11 +1,10 @@
-import { PromptData } from "../types/promptData.js";
+import { PromptData } from "../../types/promptData.js";
 
 export const formatAndHeader = ({
   matriculationNumber,
   topic,
   userName,
   useBibTex
-
 }: Omit<PromptData, "templateType">) => {
   return `
 % LaTeX Template für Abgaben an der Universität Stuttgart

@@ -2,7 +2,7 @@
 
 # CampusTex
 
-CampusTexCli is a command line interface to quickly generate latex files for presentations or task assignments, using the [unofficial LaTeX template by the University of Stuttgart](https://github.com/spethso/Abgabentemplate) made by Sandro Speth.
+CampusTex is a command line interface to quickly generate latex files for presentations or task assignments, using the [unofficial LaTeX template by the University of Stuttgart](https://github.com/spethso/Abgabentemplate) made by Sandro Speth.
 
 > For more information about the LaTeX template, head to its [GitHub](https://github.com/spethso/Abgabentemplate).
 

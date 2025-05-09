@@ -29,13 +29,13 @@ Not anymore. Just enter a little information about your work and you will be set
 Install `campus-tex-cli` globally using npm:
 
 ```
-npm install -g campus-tex-cli
+npm install -g campus-tex-cli@latest
 ```
 
 or run
 
 ```
-npx run campus-tex-cli
+npx run campus-tex-cli@latest
 ```
 
 ## Usage

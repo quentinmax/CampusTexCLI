@@ -6,7 +6,7 @@ import { handleProgram } from "./handleProgram.js";
 export const program = new Command();
 
 program
-  .version("1.1.1")
+  .version("1.3.0")
   .name("campus-tex-cli")
   .description(
     "A CLI to quickly generate latex files for presentations or task assignments, using the unofficial template from University of Stuttgart."

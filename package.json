@@ -9,8 +9,10 @@
   "type": "module",
   "scripts": {
     "test": "npx tsc && npm run link-cli && npx campus-tex-cli",
+    "test-output-dir": "npx tsc && npm run link-cli && npx campus-tex-cli -o ./test/output",
     "dev": "tsc -w",
-    "link-cli": "(npm unlink campus-tex-cli || true) && npm link"
+    "link-cli": "(npm unlink campus-tex-cli || true) && npm link",
+    "test-template": "npx tsc && npm run link-cli && npx campus-tex-cli -t ./test/template.json"
   },
   "keywords": [
     "latex",

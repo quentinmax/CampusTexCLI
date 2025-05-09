@@ -7,4 +7,5 @@ export type PromptData = {
   fileName: string;
   topic: string;
   useBibTex: boolean;
+  outputDirectory?: string;
 };
